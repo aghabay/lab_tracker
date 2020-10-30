@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Show Users</title>
+  <meta charset="utf-8">
+</head>
+<body>
+
+  <form action="/insert">
+    <input type="text" id="fname" name="fname" value=""><br>
+    <input type="submit" value="Submit">
+  </form> 
+
+  <ul id="navigation">
+    {% for item in user_list %}
+        <li><a href="{{ item.id }}">{{ item.name }}</a></li>
+    {% endfor %}
+    </ul>
+    
+</body>
+</html>

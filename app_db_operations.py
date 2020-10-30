@@ -13,14 +13,14 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String)
 
+#RETRIEVE ALL USERS
+def get_users():
+    userlist = session.query(User).order_by(User.name)
+    session.close()
+    return userlist
 
-#users = session.query(User)
-#for user in users:
-#    print(user.name)
-
-
-
-users = session.query(User).order_by(User.name)
-for user in users:
-    print(user.name)
-    print(type(user.name))
+#INSERT DATA
+def insert_user(username):
+    session.add(User(name=username))
+    session.commit()
+    session.close()

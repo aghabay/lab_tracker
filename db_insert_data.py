@@ -12,11 +12,9 @@ class User(Base):
     __tablename__ = 'users'
     id = Column(Integer, primary_key=True)
     name = Column(String)
-    fullname = Column(String)
-    nickname = Column(String)
 
 
 #INSERT DATA
-user1 = User(name="Ali", fullname="Mahammadali", nickname="Ali")
+user1 = User(name="Mahammadali")
 session.add(user1)
 session.commit()
