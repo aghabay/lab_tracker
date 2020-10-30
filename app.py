@@ -1,4 +1,6 @@
 #https://flask-sqlalchemy.palletsprojects.com/en/2.x/quickstart/
+#>>> from app import db
+#>>> db.create_all()
 from flask import Flask, render_template, request, redirect, session
 from flask_sqlalchemy import SQLAlchemy
 
