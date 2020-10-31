@@ -13,7 +13,10 @@
 
   <ul id="navigation">
     {% for item in user_list %}
-        <li><a href="/update?id={{ item.id }}">{{ item.name }}</a></li>
+        <li>
+          <a href="/update?id={{ item.id }}">{{ item.name }}</a>
+          <a href="/delete?delete_id={{ item.id }}">DELETE</a>
+        </li>
     {% endfor %}
     </ul>
 

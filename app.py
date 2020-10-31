@@ -45,6 +45,14 @@ def update():
         session["name"] = user.name
         return render_template('update.html', user=user.name)    
 
+@app.route('/delete')
+def delete():
+    id = request.args.get('delete_id')
+    row = U.query.filter_by(id=id).first()
+    db.session.delete(row)
+    db.session.commit()
+    return redirect("http://127.0.0.1:5000/")
+
 
 if __name__ == '__main__':
     app.run()
